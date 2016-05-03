@@ -1,0 +1,23 @@
+<html>
+    <head>
+  		<link rel="stylesheet" href="./lib/bulma.min.css">
+        <script src="./lib/vue.js"></script>
+        <script src="./index.js"></script>
+    </head>
+    <body>
+        <div id="app">
+			<div class="tile is-ancestor">
+				<div class="tile is-vertical is-8">
+					<div class="tile">
+						<div class="tile is-parent is-vertical">
+							<article v-for="sound in sounds" class="tile is-child notification is-primary">
+								<p class="title">{{ sound.name }}</p>
+								<p class="subtitle">{{ sound.description }}</p>
+							</article>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
