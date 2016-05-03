@@ -2,24 +2,21 @@ window.onload = function() {
   var sounds = {
     'coffee': {
       'name': 'Coffeeshop',
-      'path': 'sounds/coffee.mp3',
       'description': 'Get the day started',
-      'currentlyPlaying': false,
-      'classes': 'tile is-child notification is-primary'
+      'classes': 'tile is-child notification is-primary',
+      'audio': new Audio(['sounds/coffee.mp3']),
     },
     'library': {
       'name': 'Library',
-      'path': 'sounds/lounge.mp3',
       'description': 'Stay focused',
-      'currentlyPlaying': false,
-      'classes': 'tile is-child notification is-primary'
+      'classes': 'tile is-child notification is-primary',
+      'audio': new Audio(['sounds/lounge.mp3']),
     },
     'park': {
       'name': 'Park',
-      'path': 'sounds/campus.mp3',
       'description': 'Refresh yourself',
-      'currentlyPlaying': false,
-      'classes': 'tile is-child notification is-primary'
+      'classes': 'tile is-child notification is-primary',
+      'audio': new Audio(['sounds/campus.mp3']),
     }
   }
 
@@ -30,15 +27,21 @@ window.onload = function() {
     },
     methods: {
       play: function(e) {
+        // reset all other sounds
+        for (var key in this.sounds) {
+          var sound = this.sounds[key]
+          var audio = sound['audio']
+          audio.pause() // stop audio
+          this.sounds[key]['classes'] = 'tile is-child notification is-primary' // reset classes
+        }
+
+        // begin playing selected song
         var id = e.currentTarget.dataset.id
-        var path = this.sounds[id]['path'];
+        var sound = this.sounds[id]
+        var audio = sound['audio']
+        audio.play()
 
-        // start playing music
-        mySound = new Audio([path])
-        mySound.play()
-
-        // set playing to true and such
-        this.sounds[id]['currentlyPlaying'] = true;
+        // set to true
         this.sounds[id]['classes'] = 'tile is-child notification is-success';
       }
     }
