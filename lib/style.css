@@ -8,3 +8,7 @@ body {
     overflow: auto;
     overflow-x: hidden;
 }
+
+article {
+    cursor: pointer;
+}

@@ -11,7 +11,10 @@
 				<div class="tile is-vertical is-8">
 					<div class="tile">
 						<div class="tile is-parent is-vertical">
-							<article v-for="sound in sounds" class="tile is-child notification is-primary">
+                            <article v-for="sound in sounds"
+                                     v-on:click="play"
+                                     data-id="{{ $key }}"
+                                     class="{{ sound.classes }}">
 								<p class="title">{{ sound.name }}</p>
 								<p class="subtitle">{{ sound.description }}</p>
 							</article>
@@ -22,3 +25,6 @@
         </div>
     </body>
 </html>
+
+
+<!--v-bind:class="{'is-success': {{sound.name}}CurrentlyPlaying, 'is-primary': !{{sound.name}}CurrentlyPlaying}"-->

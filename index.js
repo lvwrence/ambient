@@ -1,29 +1,44 @@
 window.onload = function() {
-  var sounds = [
-    {
+  var sounds = {
+    'coffee': {
       'name': 'Coffeeshop',
       'path': 'sounds/coffee.mp3',
-      'description': 'Get the day started'
+      'description': 'Get the day started',
+      'currentlyPlaying': false,
+      'classes': 'tile is-child notification is-primary'
     },
-    {
+    'library': {
       'name': 'Library',
       'path': 'sounds/lounge.mp3',
-      'description': 'Stay focused'
+      'description': 'Stay focused',
+      'currentlyPlaying': false,
+      'classes': 'tile is-child notification is-primary'
     },
-    {
+    'park': {
       'name': 'Park',
       'path': 'sounds/campus.mp3',
-      'description': 'Refresh yourself'
+      'description': 'Refresh yourself',
+      'currentlyPlaying': false,
+      'classes': 'tile is-child notification is-primary'
     }
-  ]
+  }
 
   new Vue({
     el: '#app',
     data: {
       sounds: sounds
+    },
+    methods: {
+      play: function(e) {
+        var id = e.currentTarget.dataset.id
+        var path = this.sounds[id]['path'];
+
+        // start playing music
+        mySound = new Audio([path])
+        mySound.play()
+
+        // set shit
+      }
     }
   })
-
-  // mySound = new Audio(['sounds/a_walk.mp3'])
-  // mySound.play()
 }
