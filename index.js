@@ -37,7 +37,9 @@ window.onload = function() {
         mySound = new Audio([path])
         mySound.play()
 
-        // set shit
+        // set playing to true and such
+        this.sounds[id]['currentlyPlaying'] = true;
+        this.sounds[id]['classes'] = 'tile is-child notification is-success';
       }
     }
   })
