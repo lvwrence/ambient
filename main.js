@@ -13,7 +13,7 @@ if (debug) {
 } else {
   var mb = menubar({
     width: 200,
-    height: 300
+    height: 310
   })
 }
 
