@@ -1,5 +1,5 @@
 var menubar = require('menubar')
-var debug = true;
+var debug = false;
 
 if (debug) {
   var mb = menubar({
