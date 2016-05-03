@@ -4,7 +4,8 @@ var debug = true;
 if (debug) {
   var mb = menubar({
     width: 400,
-    height: 600
+    height: 600,
+    resizable: false
   })
 
   mb.on('after-create-window', function() {

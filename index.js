@@ -34,21 +34,29 @@ window.onload = function() {
     },
     methods: {
       play: function(e) {
+        var id = e.currentTarget.dataset.id
+
         // reset all other sounds
         for (var key in this.sounds) {
-          var sound = this.sounds[key]
-          var audio = sound['audio']
-          audio.pause() // stop audio
-          this.sounds[key]['classes'] = 'tile is-child notification is-primary' // reset classes
+          if (key !== id) {
+            var sound = this.sounds[key]
+            var audio = sound['audio']
+            audio.pause() // stop audio
+            this.sounds[key]['classes'] = 'tile is-child notification is-primary' // reset classes
+          }
         }
 
         // begin playing selected song
-        var id = e.currentTarget.dataset.id
         var audio = this.sounds[id]['audio']
-        audio.play()
 
-        // set to true
-        this.sounds[id]['classes'] = 'tile is-child notification is-success';
+        if (audio.paused) {
+          // play and set classes
+          audio.play()
+          this.sounds[id]['classes'] = 'tile is-child notification is-success'
+        } else {
+          audio.pause()
+          this.sounds[id]['classes'] = 'tile is-child notification is-primary'
+        }
       }
     }
   })
