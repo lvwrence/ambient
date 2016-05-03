@@ -1,7 +1,3 @@
-# example menubar app
+# ambient
 
-## instructions
-
-- run `npm install`
-- run `npm run build` to make Example.app
-- run `npm start` to run app from CLI without building Example.app
+a menubar app built with electron to help you be more productive.
