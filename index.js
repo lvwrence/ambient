@@ -3,17 +3,17 @@ window.onload = function() {
     {
       'name': 'Coffeeshop',
       'path': 'sounds/coffee.mp3',
-      'description': 'A gentle hum gets the day started'
+      'description': 'Get the day started'
     },
     {
-      'name': 'Lounge',
+      'name': 'Library',
       'path': 'sounds/lounge.mp3',
-      'description': 'Bustling chatter of the lunchtime rush'
+      'description': 'Stay focused'
     },
     {
-      'name': 'Campus',
+      'name': 'Park',
       'path': 'sounds/campus.mp3',
-      'description': 'The scholarly sounds of a campus cafe'
+      'description': 'Refresh yourself'
     }
   ]
 
