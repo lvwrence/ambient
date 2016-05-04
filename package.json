@@ -1,7 +1,7 @@
 {
-  "name": "example-menubar-app",
+  "name": "soundness",
   "version": "1.0.0",
-  "description": "example menubar electron app",
+  "description": "be more productive with sounds",
   "dependencies": {
     "menubar": "*"
   },
