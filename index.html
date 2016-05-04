@@ -1,6 +1,7 @@
 <html>
     <head>
   		<link rel="stylesheet" href="./lib/bulma.min.css">
+  		<link rel="stylesheet" href="./lib/font-awesome-4.6.2/css/font-awesome.min.css">
   		<link rel="stylesheet" href="./lib/style.css">
         <script src="./lib/vue.js"></script>
         <script src="./index.js"></script>
@@ -21,14 +22,14 @@
 						</div>
                     </div>
                 </div>
-            </div>
-
-<p class="control is-centered">
-  <a v-on:click="quit" class="button">
-    <span>Quit</span>
-  </a>
-</p>
-
-        </div>
+			</div>
+            <div>
+				<span class="icon">
+					<i class="fa fa-volume-up"></i>
+				</span>
+                <progress id="volume" class="progress" value="60" max="100">60%</progress>
+                <a id="quit" v-on:click="quit" class="button is-danger">Quit</a>
+                </div>
+		</div>
     </body>
 </html>
