@@ -1,11 +1,12 @@
 const remote = require('electron').remote
+var app = remote.require('app')
 
 window.onload = function() {
   var coffeeAudio = new Audio(['sounds/coffee.mp3'])
   coffeeAudio.loop = true
-  var libraryAudio = new Audio(['sounds/lounge.mp3'])
+  var libraryAudio = new Audio(['sounds/library.mp3'])
   libraryAudio.loop = true
-  var parkAudio = new Audio(['sounds/campus.mp3'])
+  var parkAudio = new Audio(['sounds/park.mp3'])
   parkAudio.loop = true
 
   var sounds = {
@@ -65,7 +66,7 @@ window.onload = function() {
         }
       },
       quit: function() {
-        remote.getCurrentWindow().close()
+        app.quit()
       },
       changeVolume: function(e) {
         var requestedVolume = e.offsetX / 100.0

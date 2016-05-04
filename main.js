@@ -1,11 +1,10 @@
 var menubar = require('menubar')
-var debug = true;
+var debug = false;
 
 var mb = menubar({
   width: 200,
   height: 370,
   resizable: false,
-  "always-on-top": true
 })
 
 if (debug) {

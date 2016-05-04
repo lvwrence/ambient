@@ -1,5 +1,5 @@
 {
-  "name": "soundness",
+  "name": "Soundness",
   "version": "1.0.0",
   "description": "be more productive with sounds",
   "dependencies": {
@@ -11,7 +11,7 @@
   },
   "main": "main.js",
   "scripts": {
-    "build": "electron-packager . Example --platform=darwin --arch=x64 --version=0.36.0 --icon=Icon.icns",
+    "build": "electron-packager . Soundness --platform=darwin --arch=x64 --version=0.36.0 --icon=Icon.icns",
     "start": "electron ."
   }
 }
