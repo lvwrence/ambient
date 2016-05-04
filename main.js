@@ -3,7 +3,7 @@ var debug = true;
 
 var mb = menubar({
   width: 200,
-  height: 310,
+  height: 362,
   resizable: false,
 })
 

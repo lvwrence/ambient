@@ -1,3 +1,5 @@
+const remote = require('electron').remote
+
 window.onload = function() {
   var coffeeAudio = new Audio(['sounds/coffee.mp3'])
   coffeeAudio.loop = true
@@ -57,6 +59,9 @@ window.onload = function() {
           audio.pause()
           this.sounds[id]['classes'] = 'tile is-child notification is-primary'
         }
+      },
+      quit: function() {
+        remote.getCurrentWindow().close()
       }
     }
   })
