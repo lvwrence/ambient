@@ -32,7 +32,9 @@ window.onload = function() {
   new Vue({
     el: '#app',
     data: {
-      sounds: sounds
+      sounds: sounds,
+      currentlyPlaying: null,
+      currentVolume: 100,
     },
     methods: {
       play: function(e) {
@@ -55,6 +57,8 @@ window.onload = function() {
           // play and set classes
           audio.play()
           this.sounds[id]['classes'] = 'tile is-child notification is-success'
+          this.currentlyPlaying = audio
+          this.currentlyPlaying.volume = this.currentVolume / 100.0
         } else {
           audio.pause()
           this.sounds[id]['classes'] = 'tile is-child notification is-primary'
@@ -62,6 +66,13 @@ window.onload = function() {
       },
       quit: function() {
         remote.getCurrentWindow().close()
+      },
+      changeVolume: function(e) {
+        var requestedVolume = e.offsetX / 100.0
+        this.currentVolume = requestedVolume * 100
+        if (this.currentlyPlaying) {
+          this.currentlyPlaying.volume = requestedVolume
+        }
       }
     }
   })

@@ -24,10 +24,8 @@
                 </div>
 			</div>
             <div>
-				<span class="icon">
-					<i class="fa fa-volume-up"></i>
-				</span>
-                <progress id="volume" class="progress" value="60" max="100">60%</progress>
+				<span class="icon"><i class="fa fa-volume-up"></i></span>
+                <progress id="volume" class="progress" value="{{ currentVolume }}" max="100" v-on:click="changeVolume"></progress>
                 <a id="quit" v-on:click="quit" class="button is-danger">Quit</a>
                 </div>
 		</div>
