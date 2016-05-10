@@ -1,33 +1,32 @@
 <html>
     <head>
-  		<link rel="stylesheet" href="./lib/bulma.min.css">
+  		<link rel="stylesheet" href="./lib/reset.css">
   		<link rel="stylesheet" href="./lib/font-awesome-4.6.2/css/font-awesome.min.css">
   		<link rel="stylesheet" href="./lib/style.css">
+  		<link rel="stylesheet" href="./lib/menu.css">
         <script src="./lib/vue.js"></script>
         <script src="./index.js"></script>
     </head>
     <body>
         <div id="app">
-			<div class="tile is-ancestor">
-				<div class="tile is-vertical is-8">
-					<div class="tile">
-						<div class="tile is-parent is-vertical">
-                            <article v-for="sound in sounds"
-                                     v-on:click="play"
-                                     data-id="{{ $key }}"
-                                     class="{{ sound.classes }}">
-								<p class="title">{{ sound.name }}</p>
-								<p class="subtitle">{{ sound.description }}</p>
-							</article>
-						</div>
+            <ul>
+                <li v-for="sound in sounds" @click="play" data-id="{{ $key }}">
+                    <object data="{{ sound.icon }}" type="image/svg+xml" width="50px" height="50px"></object>
+                    <div>
+                        <a class="title">{{ sound.name }}</a>
                     </div>
-                </div>
-			</div>
+                    <!-- name -->
+                    <!-- description -->
+                    <!--<p class="subtitle">{{ sound.description }}</p>-->
+                </li>
+            </ul>
+            <!--
             <div>
 				<span class="icon"><i class="fa fa-volume-up"></i></span>
                 <progress id="volume" class="progress" value="{{ currentVolume }}" max="100" v-on:click="changeVolume"></progress>
                 <a id="quit" v-on:click="quit" class="button is-danger">Quit</a>
-                </div>
+            </div>
+            -->
 		</div>
     </body>
 </html>

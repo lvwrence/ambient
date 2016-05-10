@@ -13,19 +13,22 @@ window.onload = function() {
     'coffee': {
       'name': 'Coffeeshop',
       'description': 'Get the day started',
-      'classes': 'tile is-child notification is-primary',
+      'classes': '',
+      'icon': './lib/svgs/cafe-15.svg',
       'audio': coffeeAudio,
     },
     'library': {
       'name': 'Library',
       'description': 'Stay focused',
-      'classes': 'tile is-child notification is-primary',
+      'classes': '',
+      'icon': './lib/svgs/library-15.svg',
       'audio': libraryAudio,
     },
     'park': {
       'name': 'Park',
       'description': 'Refresh yourself',
-      'classes': 'tile is-child notification is-primary',
+      'classes': '',
+      'icon': './lib/svgs/park-15.svg',
       'audio': parkAudio,
     }
   }
@@ -47,7 +50,7 @@ window.onload = function() {
             var sound = this.sounds[key]
             var audio = sound['audio']
             audio.pause() // stop audio
-            this.sounds[key]['classes'] = 'tile is-child notification is-primary' // reset classes
+            this.sounds[key]['classes'] = '' // reset classes
           }
         }
 
@@ -57,12 +60,12 @@ window.onload = function() {
         if (audio.paused) {
           // play and set classes
           audio.play()
-          this.sounds[id]['classes'] = 'tile is-child notification is-success'
+          this.sounds[id]['classes'] = ''
           this.currentlyPlaying = audio
           this.currentlyPlaying.volume = this.currentVolume / 100.0
         } else {
           audio.pause()
-          this.sounds[id]['classes'] = 'tile is-child notification is-primary'
+          this.sounds[id]['classes'] = ''
         }
       },
       quit: function() {

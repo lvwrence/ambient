@@ -6,6 +6,7 @@ html, body {
    -webkit-user-select: none;
    -ms-user-select: none;
    user-select: none;
+    font-family: 'BlinkMacSystemFont',-apple-system,'Helvetica Neue',sans-serif;
 }
 
 article {
@@ -31,3 +32,5 @@ i {
     margin-bottom: 15px;
     padding-bottom: 5px;
 }
+
+
