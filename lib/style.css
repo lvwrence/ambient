@@ -1,12 +1,13 @@
 html, body {
-    overflow: hidden;
+    // overflow: hidden;
     height: 100%;
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   -ms-user-select: none;
-   user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-family: 'BlinkMacSystemFont',-apple-system,'Helvetica Neue',sans-serif;
+    background: white;
 }
 
 article {
@@ -16,21 +17,3 @@ article {
 i {
     margin-left: 10px;
 }
-
-#volume {
-    display: inline-block;
-    margin-left: 10px;
-    margin-top: -20px;
-    margin-bottom: 0px;
-    width: 100px;
-    cursor: pointer;
-}
-
-#quit {
-    display: inline-block;
-    margin-left: 5px;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-}
-
-

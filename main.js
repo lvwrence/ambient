@@ -6,7 +6,7 @@ if (debug) {
   options = {
     width: 200,
     height: 370,
-    alwaysOnTop: true
+    'always-on-top': true
   }
 } else {
   options = {

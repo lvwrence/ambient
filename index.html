@@ -1,6 +1,7 @@
 <html>
     <head>
-  		<link rel="stylesheet" href="./lib/reset.css">
+        <link rel="stylesheet" href="./lib/reset.css">
+  		<link rel="stylesheet" href="./lib/bulma.min.css">
   		<link rel="stylesheet" href="./lib/font-awesome-4.6.2/css/font-awesome.min.css">
   		<link rel="stylesheet" href="./lib/style.css">
   		<link rel="stylesheet" href="./lib/menu.css">
@@ -9,22 +10,32 @@
     </head>
     <body>
         <div id="app">
+            <!--
+            <nav class="nav has-shadow">
+                <div class="container">
+                    <div class="level-left">
+                        <p class="level-item">
+                            <span class="icon"><i class="fa fa-volume-up"></i></span>
+                            <progress id="volume" class="progress" value="{{ currentVolume }}" max="100" v-on:click="changeVolume"></progress>
+                        </p>
+                    </div>
+                    <div class="nav-left">
+                        <p class="nav-item">
+                            <a id="quit" v-on:click="quit" class="button is-danger">Quit</a>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+            -->
             <ul>
                 <li v-for="sound in sounds" @click="play" data-id="{{ $key }}">
-                    <img src="{{ sound.icon }}" type="image/svg+xml" width="50px" height="50px" />
+                    <img v-bind:src="sound.icon" type="image/svg+xml" width="50px" height="50px" />
                     <div>
-                        <a class="title">{{ sound.name }}</a>
+                        <p class="title is-5">{{ sound.name }}</p>
+                        <!--<p class="subtitle">{{ sound.description }}</p>-->
                     </div>
-                    <!--<p class="subtitle">{{ sound.description }}</p>-->
                 </li>
             </ul>
-            <!--
-            <div>
-				<span class="icon"><i class="fa fa-volume-up"></i></span>
-                <progress id="volume" class="progress" value="{{ currentVolume }}" max="100" v-on:click="changeVolume"></progress>
-                <a id="quit" v-on:click="quit" class="button is-danger">Quit</a>
-            </div>
-            -->
 		</div>
     </body>
 </html>

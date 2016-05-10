@@ -11,7 +11,7 @@ window.onload = function() {
 
   var sounds = {
     'coffee': {
-      'name': 'Coffeeshop',
+      'name': 'Cafe',
       'description': 'Get the day started',
       'classes': '',
       'icon': './lib/svgs/cafe-15.svg',
@@ -30,7 +30,42 @@ window.onload = function() {
       'classes': '',
       'icon': './lib/svgs/park-15.svg',
       'audio': parkAudio,
-    }
+    },
+    'bakery': {
+      'name': 'Bakery',
+      'description': '',
+      'classes': '',
+      'icon': './lib/svgs/bakery-15.svg',
+      'audio': parkAudio,
+    },
+    'rain': {
+      'name': 'Rain',
+      'description': '',
+      'classes': '',
+      'icon': './lib/svgs/water-15.svg',
+      'audio': parkAudio,
+    },
+    'fireplace': {
+      'name': 'Fireplace',
+      'description': '',
+      'classes': '',
+      'icon': './lib/svgs/fire-station-15.svg',
+      'audio': parkAudio,
+    },
+    'railroad': {
+      'name': 'Railroad',
+      'description': '',
+      'classes': '',
+      'icon': './lib/svgs/rail-15.svg',
+      'audio': parkAudio,
+    },
+    'railroad': {
+      'name': 'Waves',
+      'description': '',
+      'classes': '',
+      'icon': './lib/svgs/dam-15.svg',
+      'audio': parkAudio,
+    },
   }
 
   new Vue({
