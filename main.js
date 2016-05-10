@@ -1,11 +1,22 @@
 var menubar = require('menubar')
-var debug = false;
+var debug = true;
 
-var mb = menubar({
-  width: 200,
-  height: 370,
-  resizable: false,
-})
+var options;
+if (debug) {
+  options = {
+    width: 200,
+    height: 370,
+    alwaysOnTop: true
+  }
+} else {
+  options = {
+    width: 200,
+    height: 370,
+    resizable: false,
+  }
+}
+
+var mb = menubar(options);
 
 if (debug) {
   mb.on('after-create-window', function() {
