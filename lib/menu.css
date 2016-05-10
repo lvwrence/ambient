@@ -1,5 +1,12 @@
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
 li {
+    flex-basis: auto;
     height: 66px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }

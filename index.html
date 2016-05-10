@@ -11,12 +11,10 @@
         <div id="app">
             <ul>
                 <li v-for="sound in sounds" @click="play" data-id="{{ $key }}">
-                    <object data="{{ sound.icon }}" type="image/svg+xml" width="50px" height="50px"></object>
+                    <img src="{{ sound.icon }}" type="image/svg+xml" width="50px" height="50px" />
                     <div>
                         <a class="title">{{ sound.name }}</a>
                     </div>
-                    <!-- name -->
-                    <!-- description -->
                     <!--<p class="subtitle">{{ sound.description }}</p>-->
                 </li>
             </ul>
