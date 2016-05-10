@@ -58,6 +58,12 @@ window.onload = function() {
       'icon': './lib/svgs/dam-15.svg',
       'audio': parkAudio,
     },
+    'noise': {
+      'name': 'White Noise',
+      'titleClasses': 'title is-5',
+      'icon': './lib/svgs/music-15.svg',
+      'audio': parkAudio,
+    },
   }
 
   new Vue({
