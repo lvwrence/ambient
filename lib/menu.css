@@ -4,9 +4,12 @@ ul {
 }
 
 li {
-    flex-basis: auto;
-    height: 66px;
+    height: 75px;
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+li > img {
+    width: 75px;
 }
