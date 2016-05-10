@@ -12,57 +12,49 @@ window.onload = function() {
   var sounds = {
     'coffee': {
       'name': 'Cafe',
-      'description': 'Get the day started',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/cafe-15.svg',
       'audio': coffeeAudio,
     },
     'library': {
       'name': 'Library',
-      'description': 'Stay focused',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/library-15.svg',
       'audio': libraryAudio,
     },
     'park': {
       'name': 'Park',
-      'description': 'Refresh yourself',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/park-15.svg',
       'audio': parkAudio,
     },
     'bakery': {
       'name': 'Bakery',
-      'description': '',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/bakery-15.svg',
       'audio': parkAudio,
     },
     'rain': {
       'name': 'Rain',
-      'description': '',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/water-15.svg',
       'audio': parkAudio,
     },
     'fireplace': {
       'name': 'Fireplace',
-      'description': '',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/fire-station-15.svg',
       'audio': parkAudio,
     },
     'railroad': {
       'name': 'Railroad',
-      'description': '',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/rail-15.svg',
       'audio': parkAudio,
     },
     'railroad': {
       'name': 'Waves',
-      'description': '',
-      'classes': '',
+      'titleClasses': 'title is-5',
       'icon': './lib/svgs/dam-15.svg',
       'audio': parkAudio,
     },
@@ -79,28 +71,18 @@ window.onload = function() {
       play: function(e) {
         var id = e.currentTarget.dataset.id
 
-        // reset all other sounds
-        for (var key in this.sounds) {
-          if (key !== id) {
-            var sound = this.sounds[key]
-            var audio = sound['audio']
-            audio.pause() // stop audio
-            this.sounds[key]['classes'] = '' // reset classes
-          }
-        }
-
         // begin playing selected song
         var audio = this.sounds[id]['audio']
 
         if (audio.paused) {
           // play and set classes
           audio.play()
-          this.sounds[id]['classes'] = ''
+          this.sounds[id]['titleClasses'] = 'title is-5 playing'
           this.currentlyPlaying = audio
           this.currentlyPlaying.volume = this.currentVolume / 100.0
         } else {
           audio.pause()
-          this.sounds[id]['classes'] = ''
+          this.sounds[id]['titleClasses'] = 'title is-5'
         }
       },
       quit: function() {

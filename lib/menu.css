@@ -13,3 +13,7 @@ li {
 li > img {
     width: 75px;
 }
+
+.playing {
+    color: #3778F6;
+}
